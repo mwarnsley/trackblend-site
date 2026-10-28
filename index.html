@@ -4,10 +4,217 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TrackBlend</title>
-    <meta http-equiv="refresh" content="0; url=privacy.html" />
-    <link rel="canonical" href="privacy.html" />
+    <meta
+      name="description"
+      content="TrackBlend is a color-blending train puzzle. Draw track, time your trains, and merge primaries into new colors."
+    />
+    <meta property="og:title" content="TrackBlend" />
+    <meta
+      property="og:description"
+      content="Draw track, time your trains, and blend colors. A calm puzzle game for iPhone."
+    />
+    <style>
+      :root {
+        --bg: #f6f4ee;
+        --surface: #ffffff;
+        --text: #1f2a33;
+        --muted: #5b6670;
+        --border: #d6cfc0;
+        --board: #e9e4d8;
+        --rail: #1f2a33;
+        --red: #d64545;
+        --blue: #2f6fd6;
+        --purple: #8a4fd0;
+        --accent: #1f2a33;
+        --on-accent: #ffffff;
+        --link: #0969da;
+        color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #11151c;
+          --surface: #1a2029;
+          --text: #e6edf3;
+          --muted: #9aa7b4;
+          --border: #2f3741;
+          --board: #20262e;
+          --rail: #d7e3ee;
+          --red: #f07178;
+          --blue: #6fb3f2;
+          --purple: #b89cf0;
+          --accent: #e6edf3;
+          --on-accent: #11151c;
+          --link: #7cc4e4;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 16px 64px;
+      }
+      .hero {
+        text-align: center;
+      }
+      .art {
+        display: block;
+        width: min(100%, 360px);
+        height: auto;
+        margin: 0 auto 24px;
+      }
+      /* Classes, not attributes, so Safari resolves the theme variables. */
+      .art .board {
+        fill: var(--board);
+      }
+      .art .rail {
+        fill: none;
+        stroke: var(--rail);
+        stroke-width: 6;
+        stroke-linecap: round;
+      }
+      .art .hub {
+        fill: var(--rail);
+      }
+      .art .red {
+        fill: var(--red);
+      }
+      .art .blue {
+        fill: var(--blue);
+      }
+      .art .purple {
+        fill: var(--purple);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(36px, 9vw, 52px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      .tagline {
+        margin: 12px auto 0;
+        max-width: 32ch;
+        color: var(--muted);
+        font-size: clamp(18px, 4.5vw, 21px);
+      }
+      .badge {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 600;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+        margin: 48px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .features li {
+        padding: 16px 18px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+      .features strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .features span {
+        color: var(--muted);
+        font-size: 15px;
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      a {
+        color: var(--link);
+      }
+    </style>
   </head>
   <body>
-    <p><a href="privacy.html">TrackBlend Privacy Policy</a></p>
+    <main>
+      <section class="hero">
+        <svg
+          class="art"
+          viewBox="0 0 360 160"
+          role="img"
+          aria-label="A red train and a blue train meeting at a junction and leaving as one purple train"
+        >
+          <rect class="board" width="360" height="160" rx="24" />
+          <path
+            d="M40 40 H120 Q150 40 160 70 Q168 80 180 80 H320"
+            class="rail"
+          />
+          <path d="M40 120 H120 Q150 120 160 90 Q168 80 180 80" class="rail" />
+          <circle class="hub" cx="180" cy="80" r="9" />
+          <circle class="red" cx="78" cy="40" r="16" />
+          <circle class="blue" cx="78" cy="120" r="16" />
+          <circle class="purple" cx="268" cy="80" r="20" />
+        </svg>
+        <h1>TrackBlend</h1>
+        <p class="tagline">
+          Draw the track. Time the trains. Blend the colors.
+        </p>
+        <span class="badge">Coming soon to the App Store</span>
+      </section>
+
+      <ul class="features">
+        <li>
+          <strong>Blend on the move</strong>
+          <span
+            >Red and blue meet at a junction and leave as purple, if they arrive
+            on the same tick.</span
+          >
+        </li>
+        <li>
+          <strong>120 hand-tuned levels</strong>
+          <span
+            >Ten worlds of signals, boosters, portals, and turntables, each with
+            a par to beat.</span
+          >
+        </li>
+        <li>
+          <strong>Daily Express</strong>
+          <span
+            >A fresh puzzle every day. Keep your streak and share your
+            score.</span
+          >
+        </li>
+        <li>
+          <strong>Calm by design</strong>
+          <span>No ads, no tracking, and 15 themes to earn as you play.</span>
+        </li>
+      </ul>
+
+      <footer>
+        <span>&copy; 2026 TrackBlend</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </footer>
+    </main>
   </body>
 </html>
